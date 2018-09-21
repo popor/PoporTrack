@@ -1,0 +1,6 @@
+framework module PoporTrack {
+  umbrella header "PoporTrack-umbrella.h"
+
+  export *
+  module * { export * }
+}

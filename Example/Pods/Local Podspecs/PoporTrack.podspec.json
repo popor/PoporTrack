@@ -1,0 +1,22 @@
+{
+  "name": "PoporTrack",
+  "version": "0.1.0",
+  "summary": "A short description of PoporTrack.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/popor/PoporTrack",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "popor": "908891024@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/popor/PoporTrack.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "PoporTrack/Classes/**/*"
+}
