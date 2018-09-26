@@ -54,24 +54,17 @@
     
     
     {
-        UIButton * oneBT = ({
+        ({
             UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.frame =  CGRectMake(100, 180, 60, 60);
-            //[button setTitle:@"what" forState:UIControlStateNormal];
             [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            //[button setBackgroundColor:[UIColor brownColor]];
             [button setImage:[UIImage imageNamed:@"icon"] forState:UIControlStateNormal];
-            
-            // button.layer.cornerRadius = 5;
-            // button.layer.borderColor = [UIColor lightGrayColor].CGColor;
-            // button.layer.borderWidth = 1;
-            // button.clipsToBounds = YES;
             
             [self.view addSubview:button];
             
             [button addTarget:self action:@selector(btAction) forControlEvents:UIControlEventTouchUpInside];
             
-            button;
+            //button;
         });
         
     }
