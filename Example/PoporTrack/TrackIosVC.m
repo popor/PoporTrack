@@ -76,6 +76,17 @@
         
     }
     
+    {
+//        UIView *subView = [UIView new];
+        
+        NSString *str = [[UIDevice currentDevice] name];
+        NSLog(@"str = %@", str);
+        
+    }
+    
+    
+    
+    
 }
 
 

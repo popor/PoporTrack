@@ -26,6 +26,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		671A65A6215B7DDF00817C82 /* UIView+twTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 671A65A5215B7DDF00817C82 /* UIView+twTouch.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		79A19A0EB4EEDE6870076144 /* Pods_PoporTrack_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4294A50612A5BA1EF90FD05A /* Pods_PoporTrack_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
@@ -76,6 +77,8 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		671A65A4215B7DDF00817C82 /* UIView+twTouch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+twTouch.h"; sourceTree = "<group>"; };
+		671A65A5215B7DDF00817C82 /* UIView+twTouch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+twTouch.m"; sourceTree = "<group>"; };
 		6D4FA19A117AFAFF5BDC23D1 /* Pods-PoporTrack_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporTrack_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoporTrack_Example/Pods-PoporTrack_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		734F5B846AE1D89D0EF68649 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -175,6 +178,7 @@
 		6003F593195388D20070C39A /* Example for PoporTrack */ = {
 			isa = PBXGroup;
 			children = (
+				671A65A1215B79B300817C82 /* aihy */,
 				189112D5215B62FE00277685 /* icon.png */,
 				189112D4215B2F5500277685 /* track */,
 				181807362154B6EE00CB87CE /* other */,
@@ -227,6 +231,23 @@
 				734F5B846AE1D89D0EF68649 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		671A65A1215B79B300817C82 /* aihy */ = {
+			isa = PBXGroup;
+			children = (
+				671A65A3215B7D4500817C82 /* track */,
+			);
+			path = aihy;
+			sourceTree = "<group>";
+		};
+		671A65A3215B7D4500817C82 /* track */ = {
+			isa = PBXGroup;
+			children = (
+				671A65A4215B7DDF00817C82 /* UIView+twTouch.h */,
+				671A65A5215B7DDF00817C82 /* UIView+twTouch.m */,
+			);
+			path = track;
 			sourceTree = "<group>";
 		};
 		A45537DCAF51BDDE363DFEEA /* Pods */ = {
@@ -400,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				671A65A6215B7DDF00817C82 /* UIView+twTouch.m in Sources */,
 				6003F59E195388D20070C39A /* TrackIosAppDelegate.m in Sources */,
 				189112D0215B2EF200277685 /* UIButton+track.m in Sources */,
 				189112D3215B2F4C00277685 /* UIView+track.m in Sources */,
