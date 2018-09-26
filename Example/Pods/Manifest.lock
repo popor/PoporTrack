@@ -1,15 +1,26 @@
 PODS:
-  - PoporTrack (0.1.0)
+  - PoporFoundation/NSObject (0.0.18)
+  - PoporFoundation/PrefixCore (0.0.18):
+    - PoporFoundation/PrefixOs
+  - PoporFoundation/PrefixOs (0.0.18)
+  - PoporTrack (0.0.2):
+    - PoporFoundation/NSObject
+    - PoporFoundation/PrefixCore
 
 DEPENDENCIES:
   - PoporTrack (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PoporFoundation
 
 EXTERNAL SOURCES:
   PoporTrack:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PoporTrack: e2dcd8997ab90af66e2f6350cdd542dae6867863
+  PoporFoundation: 4328c1e0ae46dccec93c898b20a378354687d5ac
+  PoporTrack: cf6fb9e8b6c9f0082ade091ef53f7186a5f2e6da
 
 PODFILE CHECKSUM: 66e3a5e090288f4df53b232d4c04bab25861991a
 

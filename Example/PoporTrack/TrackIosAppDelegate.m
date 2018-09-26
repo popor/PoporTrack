@@ -8,11 +8,22 @@
 
 #import "TrackIosAppDelegate.h"
 
+#import "PoporTrack.h"
+
 @implementation TrackIosAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+#if TARGET_IPHONE_SIMULATOR//模拟器
+    NSString * iosInjectionPath = @"/Applications/InjectionX.app/Contents/Resources/iOSInjection.bundle";
+    if ([[NSFileManager defaultManager] fileExistsAtPath:iosInjectionPath]) {
+        [[NSBundle bundleWithPath:iosInjectionPath] load];
+    }
+#endif
+    PoporTrack * track = [PoporTrack share];
+    track.eventSet = [[NSMutableSet alloc] initWithArray:@[@"TrackIosVC_Touch"]];
+    
     return YES;
 }
 

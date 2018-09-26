@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1888BB452154E9380027DB6F /* VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888BB442154E9380027DB6F /* VC1.m */; };
+		189112CE215B2EF200277685 /* UIViewController+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112C9215B2EEF00277685 /* UIViewController+track.m */; };
+		189112CF215B2EF200277685 /* PoporTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112CA215B2EF000277685 /* PoporTrack.m */; };
+		189112D0215B2EF200277685 /* UIButton+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112CB215B2EF000277685 /* UIButton+track.m */; };
+		189112D3215B2F4C00277685 /* UIView+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112D2215B2F4C00277685 /* UIView+track.m */; };
+		189112D6215B62FE00277685 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 189112D5215B62FE00277685 /* icon.png */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -38,6 +44,17 @@
 
 /* Begin PBXFileReference section */
 		02357076E6C622D6577C61C2 /* Pods-PoporTrack_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporTrack_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoporTrack_Tests/Pods-PoporTrack_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1888BB432154E9380027DB6F /* VC1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC1.h; sourceTree = "<group>"; };
+		1888BB442154E9380027DB6F /* VC1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC1.m; sourceTree = "<group>"; };
+		189112C8215B2EEF00277685 /* UIViewController+track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+track.h"; sourceTree = "<group>"; };
+		189112C9215B2EEF00277685 /* UIViewController+track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+track.m"; sourceTree = "<group>"; };
+		189112CA215B2EF000277685 /* PoporTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoporTrack.m; sourceTree = "<group>"; };
+		189112CB215B2EF000277685 /* UIButton+track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+track.m"; sourceTree = "<group>"; };
+		189112CC215B2EF100277685 /* UIButton+track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+track.h"; sourceTree = "<group>"; };
+		189112CD215B2EF100277685 /* PoporTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PoporTrack.h; sourceTree = "<group>"; };
+		189112D1215B2F4C00277685 /* UIView+track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+track.h"; sourceTree = "<group>"; };
+		189112D2215B2F4C00277685 /* UIView+track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+track.m"; sourceTree = "<group>"; };
+		189112D5215B62FE00277685 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		4294A50612A5BA1EF90FD05A /* Pods_PoporTrack_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporTrack_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		548051F0888238774F9FFF0C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* PoporTrack_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoporTrack_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +123,21 @@
 			name = other;
 			sourceTree = "<group>";
 		};
+		189112D4215B2F5500277685 /* track */ = {
+			isa = PBXGroup;
+			children = (
+				189112CD215B2EF100277685 /* PoporTrack.h */,
+				189112CA215B2EF000277685 /* PoporTrack.m */,
+				189112D1215B2F4C00277685 /* UIView+track.h */,
+				189112D2215B2F4C00277685 /* UIView+track.m */,
+				189112CC215B2EF100277685 /* UIButton+track.h */,
+				189112CB215B2EF000277685 /* UIButton+track.m */,
+				189112C8215B2EEF00277685 /* UIViewController+track.h */,
+				189112C9215B2EEF00277685 /* UIViewController+track.m */,
+			);
+			path = track;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -143,11 +175,15 @@
 		6003F593195388D20070C39A /* Example for PoporTrack */ = {
 			isa = PBXGroup;
 			children = (
+				189112D5215B62FE00277685 /* icon.png */,
+				189112D4215B2F5500277685 /* track */,
 				181807362154B6EE00CB87CE /* other */,
 				6003F59C195388D20070C39A /* TrackIosAppDelegate.h */,
 				6003F59D195388D20070C39A /* TrackIosAppDelegate.m */,
 				6003F5A5195388D20070C39A /* TrackIosVC.h */,
 				6003F5A6195388D20070C39A /* TrackIosVC.m */,
+				1888BB432154E9380027DB6F /* VC1.h */,
+				1888BB442154E9380027DB6F /* VC1.m */,
 			);
 			name = "Example for PoporTrack";
 			path = PoporTrack;
@@ -285,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				189112D6215B62FE00277685 /* icon.png in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -327,11 +364,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PoporTrack_Example/Pods-PoporTrack_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PoporTrack/PoporTrack.framework",
+				"${BUILT_PRODUCTS_DIR}/PoporFoundation/PoporFoundation.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PoporTrack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PoporFoundation.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,8 +401,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* TrackIosAppDelegate.m in Sources */,
+				189112D0215B2EF200277685 /* UIButton+track.m in Sources */,
+				189112D3215B2F4C00277685 /* UIView+track.m in Sources */,
 				6003F5A7195388D20070C39A /* TrackIosVC.m in Sources */,
+				189112CF215B2EF200277685 /* PoporTrack.m in Sources */,
+				1888BB452154E9380027DB6F /* VC1.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				189112CE215B2EF200277685 /* UIViewController+track.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

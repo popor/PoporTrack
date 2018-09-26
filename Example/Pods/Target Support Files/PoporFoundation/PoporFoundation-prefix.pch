@@ -10,9 +10,3 @@
 #endif
 #endif
 
-#import "UIButton+track.h"
-#import "UIViewController+track.h"
-
-FOUNDATION_EXPORT double PoporTrackVersionNumber;
-FOUNDATION_EXPORT const unsigned char PoporTrackVersionString[];
-
