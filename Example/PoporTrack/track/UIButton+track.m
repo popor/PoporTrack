@@ -53,18 +53,24 @@
         }
         //NSLog(@"-- superview:%@, vcClass:%@", NSStringFromClass([superview class]), vcClass);
         if (vcClass) {
-            if (self.currentTitle) {
-                self.trackID = [NSString stringWithFormat:@"%@_%@", vcClass, self.currentTitle];
-            }else if (self.currentImage) {
-                self.trackID = [NSString stringWithFormat:@"%@_%li", vcClass, self.currentImage.hash];
-            }else if(self.currentBackgroundImage){
-                self.trackID = [NSString stringWithFormat:@"%@_%li", vcClass, self.currentBackgroundImage.hash];
-            }
+            self.trackID = vcClass;
         }
     }
-    NSLog(@"self.trackID:%@", self.trackID);
+    // BT 名字图片可能变更.
+    NSString * checkID;
+    if (self.currentTitle) {
+        checkID = [NSString stringWithFormat:@"%@_%@", self.trackID, self.currentTitle];
+    }else if (self.currentImage) {
+        checkID = [NSString stringWithFormat:@"%@_%li", self.trackID, self.currentImage.hash];
+    }else if(self.currentBackgroundImage){
+        checkID = [NSString stringWithFormat:@"%@_%li", self.trackID, self.currentBackgroundImage.hash];
+    }else{
+        return;
+    }
+    
+    NSLog(@"checkID:%@", checkID);
     PoporTrack * track = [PoporTrack share];
-    if ([track.eventSet containsObject:self.trackID]) {
+    if ([track.eventSet containsObject:checkID]) {
         NSLog(@"需要跟踪");
     }else{
         NSLog(@"-- 不需要跟踪");

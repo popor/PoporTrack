@@ -1,8 +1,8 @@
 PODS:
-  - PoporFoundation/NSObject (0.0.19)
-  - PoporFoundation/PrefixCore (0.0.19):
+  - PoporFoundation/NSObject (0.0.20)
+  - PoporFoundation/PrefixCore (0.0.20):
     - PoporFoundation/PrefixOs
-  - PoporFoundation/PrefixOs (0.0.19)
+  - PoporFoundation/PrefixOs (0.0.20)
   - PoporTrack (0.0.2):
     - PoporFoundation/NSObject
     - PoporFoundation/PrefixCore
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PoporFoundation: 1b0ac692461f3b78d242ff9954c3b3b77619a6e7
+  PoporFoundation: ad9bed91f7e8770d0d9c8e0f5e6edcc9d28c508f
   PoporTrack: cf6fb9e8b6c9f0082ade091ef53f7186a5f2e6da
 
 PODFILE CHECKSUM: 66e3a5e090288f4df53b232d4c04bab25861991a
