@@ -97,15 +97,23 @@ _Pragma("clang diagnostic pop") \
     //        [self performSelector:item.trackAction];
     //    );
     
-    [UIBarButtonItem target:self action:item.trackAction];
+    [UIBarButtonItem target:self voidAction:item.trackAction];
 }
 
-+ (void)target:(id)target action:(SEL)action {
++ (void)target:(id)target voidAction:(SEL)action {
     if (!target) { return; }
     IMP imp = [target methodForSelector:action];
     void (*func)(id, SEL) = (void *)imp;
     func(target, action);
 }
+
+//// 带参数的和返回值的
+//+ (void)target1:(id)target action:(SEL)action {
+//    SEL selector = NSSelectorFromString(@"processRegion:ofView:");
+//    IMP imp = [target methodForSelector:selector];
+//    CGRect (*func)(id, SEL, CGRect, UIView *) = (void *)imp;
+//    CGRect result = target ? func(target, selector, someRect, someView) : CGRectZero;
+//}
 
 // MARK: set get
 - (void)setTrackAction:(SEL)trackAction {
