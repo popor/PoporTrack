@@ -25,7 +25,7 @@
     track.eventSet = [[NSMutableSet alloc] initWithArray:@[@"TrackIosVC_Touch"]];
     
     // wkq
-    [track.eventSet addObjectsFromArray:@[@"VCWkq1_VCWkq2Action"]];
+    [track.eventSet addObjectsFromArray:@[@"VCWkq1_VCWkq2", @"VCWkq1_VCWkq3"]];
     
     // ahy
     //[track.eventSet addObjectsFromArray:@[]];

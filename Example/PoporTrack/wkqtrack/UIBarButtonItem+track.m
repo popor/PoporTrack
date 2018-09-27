@@ -11,6 +11,20 @@
 #import "UIView+track.h"
 #import "PoporTrack.h"
 
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+//
+//作者：戴仓薯
+//链接：https://www.jianshu.com/p/6517ab655be7
+//來源：简书
+//简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+
 @implementation UIBarButtonItem (track)
 //@dynamic trackTarget;
 @dynamic trackAction;
@@ -31,7 +45,7 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithImage:image style:style target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
+    item.trackID = [NSString stringWithFormat:@"%@_%li", NSStringFromClass([target class]), image.hash];
     
     return item;
 }
@@ -40,7 +54,7 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithImage:image landscapeImagePhone:landscapeImagePhone style:style target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
+    item.trackID = [NSString stringWithFormat:@"%@_%li", NSStringFromClass([target class]), image.hash];
     
     return item;
 }
@@ -49,7 +63,7 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithTitle:title style:style target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
+    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), title];
     
     return item;
 }
@@ -58,7 +72,7 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithBarButtonSystemItem:systemItem target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
+    item.trackID = [NSString stringWithFormat:@"%@_%li", NSStringFromClass([target class]), systemItem];
     
     return item;
 }
@@ -79,9 +93,18 @@
         NSLog(@"跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
     }
     
-    //NS_ASSUME_NONNULL_BEGIN
-    [self performSelector:item.trackAction];
-    //NS_ASSUME_NONNULL_END
+    //    SuppressPerformSelectorLeakWarning(
+    //        [self performSelector:item.trackAction];
+    //    );
+    
+    [UIBarButtonItem target:self action:item.trackAction];
+}
+
++ (void)target:(id)target action:(SEL)action {
+    if (!target) { return; }
+    IMP imp = [target methodForSelector:action];
+    void (*func)(id, SEL) = (void *)imp;
+    func(target, action);
 }
 
 // MARK: set get

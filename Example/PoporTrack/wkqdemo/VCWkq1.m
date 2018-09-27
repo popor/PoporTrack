@@ -9,6 +9,7 @@
 #import "VCWkq1.h"
 
 #import "VCWkq2.h"
+#import "VCWkq3.h"
 
 @interface VCWkq1 ()
 
@@ -25,12 +26,19 @@
     
     {
         UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"VCWkq2" style:UIBarButtonItemStylePlain target:self action:@selector(VCWkq2Action)];
-        self.navigationItem.rightBarButtonItems = @[item1];
+        UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"VCWkq3" style:UIBarButtonItemStylePlain target:self action:@selector(VCWkq3Action)];
+        
+        self.navigationItem.rightBarButtonItems = @[item1, item2];
     }
 }
 
 - (void)VCWkq2Action {
     [self.navigationController pushViewController:[VCWkq2 new] animated:YES];
 }
+
+- (void)VCWkq3Action {
+    [self.navigationController pushViewController:[VCWkq3 new] animated:YES];
+}
+
 
 @end
