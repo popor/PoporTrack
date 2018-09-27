@@ -394,7 +394,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PoporTrack_Example/Pods-PoporTrack_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PoporTrack_Example/Pods-PoporTrack_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PoporFoundation/PoporFoundation.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -403,7 +403,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoporTrack_Example/Pods-PoporTrack_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PoporTrack_Example/Pods-PoporTrack_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A4AB62B0C9B067872BFE2C31 /* [CP] Check Pods Manifest.lock */ = {

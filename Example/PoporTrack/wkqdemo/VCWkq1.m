@@ -28,7 +28,7 @@
         UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"VCWkq2" style:UIBarButtonItemStylePlain target:self action:@selector(VCWkq2Action)];
         UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"VCWkq3" style:UIBarButtonItemStylePlain target:self action:@selector(VCWkq3Action)];
         
-        self.navigationItem.rightBarButtonItems = @[item1, item2];
+        self.navigationItem.rightBarButtonItems = @[item2, item1];
     }
 }
 

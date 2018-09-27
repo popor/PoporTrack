@@ -23,8 +23,11 @@
 - (void)trackViewDidLoad {
     [self trackViewDidLoad];
     
-    //NSLog(@"追踪VC: %@ %s", NSStringFromClass([self class]), __func__);
     self.view.trackVcClass = NSStringFromClass([self class]);
+    PoporTrack * track = [PoporTrack share];
+    if ([track.vcSet containsObject:self.view.trackVcClass]) {
+        NSLog(@"追踪VC: %@", NSStringFromClass([self class]));
+    }
 }
 
 @end

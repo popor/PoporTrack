@@ -8,22 +8,9 @@
 
 #import "UIBarButtonItem+track.h"
 #import <PoporFoundation/NSObject+Swizzling.h>
+#import <PoporFoundation/NSObject+performSelector.h>
 #import "UIView+track.h"
 #import "PoporTrack.h"
-
-#define SuppressPerformSelectorLeakWarning(Stuff) \
-do { \
-_Pragma("clang diagnostic push") \
-_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
-Stuff; \
-_Pragma("clang diagnostic pop") \
-} while (0)
-
-//
-//作者：戴仓薯
-//链接：https://www.jianshu.com/p/6517ab655be7
-//來源：简书
-//简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
 
 @implementation UIBarButtonItem (track)
 //@dynamic trackTarget;
@@ -93,27 +80,8 @@ _Pragma("clang diagnostic pop") \
         NSLog(@"跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
     }
     
-    //    SuppressPerformSelectorLeakWarning(
-    //        [self performSelector:item.trackAction];
-    //    );
-    
-    [UIBarButtonItem target:self voidAction:item.trackAction];
+    SuppressPerformSelectorLeakWarning([self performSelector:item.trackAction];);
 }
-
-+ (void)target:(id)target voidAction:(SEL)action {
-    if (!target) { return; }
-    IMP imp = [target methodForSelector:action];
-    void (*func)(id, SEL) = (void *)imp;
-    func(target, action);
-}
-
-//// 带参数的和返回值的
-//+ (void)target1:(id)target action:(SEL)action {
-//    SEL selector = NSSelectorFromString(@"processRegion:ofView:");
-//    IMP imp = [target methodForSelector:selector];
-//    CGRect (*func)(id, SEL, CGRect, UIView *) = (void *)imp;
-//    CGRect result = target ? func(target, selector, someRect, someView) : CGRectZero;
-//}
 
 // MARK: set get
 - (void)setTrackAction:(SEL)trackAction {
