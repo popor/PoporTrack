@@ -57,6 +57,7 @@
 
 - (instancetype)trackinitWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(nullable id)target action:(nullable SEL)action {
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
+    
     UIBarButtonItem * item = [self trackinitWithBarButtonSystemItem:systemItem target:target action:swizzleSEL];
     item.trackAction = action;
     item.trackID = [NSString stringWithFormat:@"%@_%li", NSStringFromClass([target class]), systemItem];
@@ -65,6 +66,9 @@
 }
 
 - (SEL)swizzlingTarget:(id)target action:(SEL)action {
+    if (!target || !action) {
+        return nil;
+    }
     SEL swizzleSEL = @selector(trackEvent:);
     // 新增函数
     class_addMethod([target class], swizzleSEL, class_getMethodImplementation([self class], swizzleSEL), "v@:@");
@@ -75,12 +79,13 @@
 }
 
 - (void)trackEvent:(UIBarButtonItem *)item {
-    PoporTrack * track = [PoporTrack share];
-    if ([track.eventSet containsObject:item.trackID]) {
-        NSLog(@"跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
+    if (item.trackAction) {
+        PoporTrack * track = [PoporTrack share];
+        if ([track.eventSet containsObject:item.trackID]) {
+            NSLog(@"跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
+        }
+        SuppressPerformSelectorLeakWarning([self performSelector:item.trackAction];);
     }
-    
-    SuppressPerformSelectorLeakWarning([self performSelector:item.trackAction];);
 }
 
 // MARK: set get
