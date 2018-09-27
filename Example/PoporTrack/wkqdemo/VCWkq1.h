@@ -1,8 +1,8 @@
 //
-//  VC1.h
+//  VCWkq1.h
 //  PoporTrack_Example
 //
-//  Created by apple on 2018/9/21.
+//  Created by apple on 2018/9/27.
 //  Copyright © 2018年 popor. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VC1 : UIViewController
+@interface VCWkq1 : UIViewController
 
 @end
 

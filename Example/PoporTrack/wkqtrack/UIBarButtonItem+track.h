@@ -13,10 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIBarButtonItem (track)
 
 //@property (nullable, nonatomic,weak) id  trackTarget;
-//@property (nullable, nonatomic)      SEL trackAction;
+@property (nullable, nonatomic)      SEL trackAction;
+@property (nonatomic, strong) NSString * trackID;
+@property (nonatomic        ) BOOL     trackEnable;
+@property (nonatomic, strong) NSString * trackVcClass;
 
-//@property (nonatomic,weak) id  trackTarget;
-//@property (nonatomic)      SEL trackAction;
 
 @end
 

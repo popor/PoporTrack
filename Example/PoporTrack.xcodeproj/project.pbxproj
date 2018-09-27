@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1888BB452154E9380027DB6F /* VC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888BB442154E9380027DB6F /* VC1.m */; };
+		188C64FE215C826200A49E82 /* VCWkq1.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C64FD215C826200A49E82 /* VCWkq1.m */; };
+		188C6501215C827D00A49E82 /* VCWkq2.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C6500215C827D00A49E82 /* VCWkq2.m */; };
 		189112CE215B2EF200277685 /* UIViewController+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112C9215B2EEF00277685 /* UIViewController+track.m */; };
 		189112CF215B2EF200277685 /* PoporTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112CA215B2EF000277685 /* PoporTrack.m */; };
 		189112D0215B2EF200277685 /* UIButton+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112CB215B2EF000277685 /* UIButton+track.m */; };
 		189112D3215B2F4C00277685 /* UIView+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112D2215B2F4C00277685 /* UIView+track.m */; };
 		189112D6215B62FE00277685 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 189112D5215B62FE00277685 /* icon.png */; };
 		189112DA215B702B00277685 /* UIBarButtonItem+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112D9215B702B00277685 /* UIBarButtonItem+track.m */; };
-		189112DF215B867400277685 /* OCDynamicHookUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112DE215B867400277685 /* OCDynamicHookUtils.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -46,8 +46,10 @@
 
 /* Begin PBXFileReference section */
 		02357076E6C622D6577C61C2 /* Pods-PoporTrack_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporTrack_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoporTrack_Tests/Pods-PoporTrack_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		1888BB432154E9380027DB6F /* VC1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VC1.h; sourceTree = "<group>"; };
-		1888BB442154E9380027DB6F /* VC1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VC1.m; sourceTree = "<group>"; };
+		188C64FC215C826200A49E82 /* VCWkq1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCWkq1.h; sourceTree = "<group>"; };
+		188C64FD215C826200A49E82 /* VCWkq1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCWkq1.m; sourceTree = "<group>"; };
+		188C64FF215C827D00A49E82 /* VCWkq2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCWkq2.h; sourceTree = "<group>"; };
+		188C6500215C827D00A49E82 /* VCWkq2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCWkq2.m; sourceTree = "<group>"; };
 		189112C8215B2EEF00277685 /* UIViewController+track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+track.h"; sourceTree = "<group>"; };
 		189112C9215B2EEF00277685 /* UIViewController+track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+track.m"; sourceTree = "<group>"; };
 		189112CA215B2EF000277685 /* PoporTrack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PoporTrack.m; sourceTree = "<group>"; };
@@ -59,8 +61,6 @@
 		189112D5215B62FE00277685 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		189112D8215B702B00277685 /* UIBarButtonItem+track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+track.h"; sourceTree = "<group>"; };
 		189112D9215B702B00277685 /* UIBarButtonItem+track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+track.m"; sourceTree = "<group>"; };
-		189112DD215B867400277685 /* OCDynamicHookUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCDynamicHookUtils.h; sourceTree = "<group>"; };
-		189112DE215B867400277685 /* OCDynamicHookUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCDynamicHookUtils.m; sourceTree = "<group>"; };
 		4294A50612A5BA1EF90FD05A /* Pods_PoporTrack_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporTrack_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		548051F0888238774F9FFF0C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* PoporTrack_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoporTrack_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,17 +156,12 @@
 		189112DB215B710100277685 /* wkqdemo */ = {
 			isa = PBXGroup;
 			children = (
+				188C64FC215C826200A49E82 /* VCWkq1.h */,
+				188C64FD215C826200A49E82 /* VCWkq1.m */,
+				188C64FF215C827D00A49E82 /* VCWkq2.h */,
+				188C6500215C827D00A49E82 /* VCWkq2.m */,
 			);
 			path = wkqdemo;
-			sourceTree = "<group>";
-		};
-		189112DC215B867300277685 /* OCDynamicHookUtils */ = {
-			isa = PBXGroup;
-			children = (
-				189112DD215B867400277685 /* OCDynamicHookUtils.h */,
-				189112DE215B867400277685 /* OCDynamicHookUtils.m */,
-			);
-			path = OCDynamicHookUtils;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -206,7 +201,6 @@
 		6003F593195388D20070C39A /* Example for PoporTrack */ = {
 			isa = PBXGroup;
 			children = (
-				189112DC215B867300277685 /* OCDynamicHookUtils */,
 				189112D5215B62FE00277685 /* icon.png */,
 				189112D4215B2F5500277685 /* track */,
 				189112D7215B6F0900277685 /* wkqtrack */,
@@ -216,8 +210,6 @@
 				6003F59D195388D20070C39A /* TrackIosAppDelegate.m */,
 				6003F5A5195388D20070C39A /* TrackIosVC.h */,
 				6003F5A6195388D20070C39A /* TrackIosVC.m */,
-				1888BB432154E9380027DB6F /* VC1.h */,
-				1888BB442154E9380027DB6F /* VC1.m */,
 			);
 			name = "Example for PoporTrack";
 			path = PoporTrack;
@@ -434,14 +426,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188C6501215C827D00A49E82 /* VCWkq2.m in Sources */,
 				6003F59E195388D20070C39A /* TrackIosAppDelegate.m in Sources */,
 				189112DA215B702B00277685 /* UIBarButtonItem+track.m in Sources */,
 				189112D0215B2EF200277685 /* UIButton+track.m in Sources */,
 				189112D3215B2F4C00277685 /* UIView+track.m in Sources */,
 				6003F5A7195388D20070C39A /* TrackIosVC.m in Sources */,
 				189112CF215B2EF200277685 /* PoporTrack.m in Sources */,
-				189112DF215B867400277685 /* OCDynamicHookUtils.m in Sources */,
-				1888BB452154E9380027DB6F /* VC1.m in Sources */,
+				188C64FE215C826200A49E82 /* VCWkq1.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				189112CE215B2EF200277685 /* UIViewController+track.m in Sources */,
 			);

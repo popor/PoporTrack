@@ -8,7 +8,7 @@
 
 #import "TrackIosVC.h"
 
-#import "VC1.h"
+#import "VCWkq1.h"
 #import "UIButton+track.h"
 
 @interface TrackIosVC ()
@@ -78,9 +78,8 @@
 }
 
 - (void)ncRItemAction {
-    NSLog(@"%s", __func__);
-    [self.navigationController pushViewController:[VC1 new] animated:YES];
-    
+    //NSLog(@"%s", __func__);
+    [self.navigationController pushViewController:[VCWkq1 new] animated:YES];
 }
 
 @end
