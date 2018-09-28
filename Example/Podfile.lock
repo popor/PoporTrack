@@ -1,4 +1,5 @@
 PODS:
+  - Masonry (1.1.0)
   - PoporFoundation/NSObject (0.0.20)
   - PoporFoundation/PrefixCore (0.0.20):
     - PoporFoundation/PrefixOs
@@ -8,10 +9,12 @@ PODS:
     - PoporFoundation/PrefixCore
 
 DEPENDENCIES:
+  - Masonry
   - PoporTrack (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Masonry
     - PoporFoundation
 
 EXTERNAL SOURCES:
@@ -19,9 +22,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: ad9bed91f7e8770d0d9c8e0f5e6edcc9d28c508f
   PoporTrack: cf6fb9e8b6c9f0082ade091ef53f7186a5f2e6da
 
-PODFILE CHECKSUM: 66e3a5e090288f4df53b232d4c04bab25861991a
+PODFILE CHECKSUM: e4b1158eb8c14994b57ae050cd8ea4ff0aec8f32
 
 COCOAPODS: 1.6.0.beta.1

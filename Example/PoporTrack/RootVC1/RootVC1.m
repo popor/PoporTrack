@@ -6,20 +6,21 @@
 //  Copyright (c) 2018 popor. All rights reserved.
 //
 
-#import "TrackIosVC.h"
+#import "RootVC1.h"
 
 #import "VCWkq1.h"
 #import "UIButton+track.h"
 
-@interface TrackIosVC ()
+@interface RootVC1 ()
 
 @end
 
-@implementation TrackIosVC
+@implementation RootVC1
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Track";
+    
+    self.title = NSStringFromClass([self class]);
 
     [self addViews];
 }
