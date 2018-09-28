@@ -8,6 +8,7 @@
 
 #import "RootVC2.h"
 #import <Masonry/Masonry.h>
+#import "RootVC2Cell.h"
 
 @interface RootVC2 () <UITableViewDelegate, UITableViewDataSource>
 
@@ -41,9 +42,7 @@
     
     [self.view addSubview:oneTV];
     
-    __weak typeof (self) weakSelf = self;
     [oneTV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(weakSelf.view);
         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
@@ -60,7 +59,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
+    return 50;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -73,13 +72,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * CellID = @"CellID";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
+    RootVC2Cell * cell = [tableView dequeueReusableCellWithIdentifier:CellID];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
+        cell = [[RootVC2Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%li", indexPath.row];
+    //cell.textLabel.text = [NSString stringWithFormat:@"%li", indexPath.row];
+    cell.l.text = [NSString stringWithFormat:@"%li", indexPath.row];
     
     return cell;
 }

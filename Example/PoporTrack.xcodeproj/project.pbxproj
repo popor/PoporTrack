@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1885E6BB215DC02C00D6F30D /* RootVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1885E6BA215DC02C00D6F30D /* RootVC2.m */; };
+		1885E6BF215DC66300D6F30D /* RootVC2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1885E6BE215DC66300D6F30D /* RootVC2Cell.m */; };
 		188C64FE215C826200A49E82 /* VCWkq1.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C64FD215C826200A49E82 /* VCWkq1.m */; };
 		188C6501215C827D00A49E82 /* VCWkq2.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C6500215C827D00A49E82 /* VCWkq2.m */; };
 		189112CE215B2EF200277685 /* UIViewController+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112C9215B2EEF00277685 /* UIViewController+track.m */; };
@@ -50,6 +51,8 @@
 		02357076E6C622D6577C61C2 /* Pods-PoporTrack_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporTrack_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoporTrack_Tests/Pods-PoporTrack_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1885E6B9215DC02C00D6F30D /* RootVC2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootVC2.h; sourceTree = "<group>"; };
 		1885E6BA215DC02C00D6F30D /* RootVC2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootVC2.m; sourceTree = "<group>"; };
+		1885E6BD215DC66300D6F30D /* RootVC2Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootVC2Cell.h; sourceTree = "<group>"; };
+		1885E6BE215DC66300D6F30D /* RootVC2Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootVC2Cell.m; sourceTree = "<group>"; };
 		188C64FC215C826200A49E82 /* VCWkq1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCWkq1.h; sourceTree = "<group>"; };
 		188C64FD215C826200A49E82 /* VCWkq1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCWkq1.m; sourceTree = "<group>"; };
 		188C64FF215C827D00A49E82 /* VCWkq2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCWkq2.h; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 		1885E6B5215DBF1F00D6F30D /* RootVC2 */ = {
 			isa = PBXGroup;
 			children = (
+				1885E6BC215DC64A00D6F30D /* cell */,
 				1885E6B9215DC02C00D6F30D /* RootVC2.h */,
 				1885E6BA215DC02C00D6F30D /* RootVC2.m */,
 			);
@@ -173,6 +177,24 @@
 			path = RootVC4;
 			sourceTree = "<group>";
 		};
+		1885E6BC215DC64A00D6F30D /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				1885E6BD215DC66300D6F30D /* RootVC2Cell.h */,
+				1885E6BE215DC66300D6F30D /* RootVC2Cell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		1885E6C0215DC9A900D6F30D /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				6003F59C195388D20070C39A /* TrackIosAppDelegate.h */,
+				6003F59D195388D20070C39A /* TrackIosAppDelegate.m */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
 		189112D4215B2F5500277685 /* track */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,13 +217,6 @@
 				189112D9215B702B00277685 /* UIBarButtonItem+track.m */,
 			);
 			path = wkqtrack;
-			sourceTree = "<group>";
-		};
-		189112DB215B710100277685 /* wkqdemo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = wkqdemo;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -244,10 +259,8 @@
 				189112D5215B62FE00277685 /* icon.png */,
 				189112D4215B2F5500277685 /* track */,
 				189112D7215B6F0900277685 /* wkqtrack */,
-				189112DB215B710100277685 /* wkqdemo */,
 				181807362154B6EE00CB87CE /* other */,
-				6003F59C195388D20070C39A /* TrackIosAppDelegate.h */,
-				6003F59D195388D20070C39A /* TrackIosAppDelegate.m */,
+				1885E6C0215DC9A900D6F30D /* APP */,
 				1885E6B6215DBF6600D6F30D /* RootVC1 */,
 				1885E6B5215DBF1F00D6F30D /* RootVC2 */,
 				1885E6B7215DBF6F00D6F30D /* RootVC3 */,
@@ -474,6 +487,7 @@
 				6003F59E195388D20070C39A /* TrackIosAppDelegate.m in Sources */,
 				189112DA215B702B00277685 /* UIBarButtonItem+track.m in Sources */,
 				189112D0215B2EF200277685 /* UIButton+track.m in Sources */,
+				1885E6BF215DC66300D6F30D /* RootVC2Cell.m in Sources */,
 				189112D3215B2F4C00277685 /* UIView+track.m in Sources */,
 				6003F5A7195388D20070C39A /* RootVC1.m in Sources */,
 				189112CF215B2EF200277685 /* PoporTrack.m in Sources */,
