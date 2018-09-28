@@ -29,7 +29,7 @@
 
 - (instancetype)trackinitWithTarget:(nullable id)target action:(nullable SEL)action {
     UIGestureRecognizer * gr;
-    if ([[PoporTrack share].grEventTargetSet containsObject:NSStringFromClass([target class])]) {
+    if ([[PoporTrack share].eventTargetSet containsObject:NSStringFromClass([target class])]) {
         //NSLog(@"self:%@, target: %@, action:%@", NSStringFromClass([self class]), target, NSStringFromSelector(action));
         //NSLog(@"targetClass: %@ - %@", [target class], [target superclass]);
         SEL swizzleSEL = [self swizzlingTarget:target action:action];
@@ -66,7 +66,7 @@
         }
         PoporTrack * track = [PoporTrack share];
         
-        if ([track.grEventVcTargetActionSet containsObject:gr.trackID]) {
+        if ([track.eventVcTargetActionSet containsObject:gr.trackID]) {
             NSLog(@"需要跟踪 gr : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(gr.trackAction));
         }
         SuppressPerformSelectorLeakWarning([gr.trackTarget performSelector:gr.trackAction];);

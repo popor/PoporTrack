@@ -29,6 +29,7 @@
 - (void)trackAddTarget:(nullable id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
     [self trackAddTarget:target action:action forControlEvents:controlEvents];
     
+    self.trackTarget = target;
     self.trackAction = action;
     
     [self removeTarget:self action:@selector(trackExtension) forControlEvents:controlEvents];
@@ -36,35 +37,22 @@
 }
 
 - (void)trackExtension {
-    //NSLog(@"追踪BT: %@ %s", NSStringFromClass([self class]), __func__);
     if (!self.trackID) {
         NSString * vcClass = self.vcClassName;
         if (vcClass) {
-            self.trackID = vcClass;
+            self.trackID = [NSString stringWithFormat:@"%@_%@_%@", vcClass, NSStringFromClass([self.trackTarget class]), NSStringFromSelector(self.trackAction)];
+        }else{
+            return;
         }
     }
-    // BT 名字图片可能变更.
-    
-    NSString * checkID = [NSString stringWithFormat:@"%@_%@", self.trackID, NSStringFromSelector(self.trackAction)];
-    
-    //    if (self.currentTitle) {
-    //        checkID = [NSString stringWithFormat:@"%@_%@", self.trackID, self.currentTitle];
-    //    }else if (self.currentImage) {
-    //        checkID = [NSString stringWithFormat:@"%@_%li", self.trackID, self.currentImage.hash];
-    //    }else if(self.currentBackgroundImage){
-    //        checkID = [NSString stringWithFormat:@"%@_%li", self.trackID, self.currentBackgroundImage.hash];
-    //    }else{
-    //        return;
-    //    }
-    
-    //NSLog(@"checkID:%@", checkID);
-    PoporTrack * track = [PoporTrack share];
-    if ([track.controlVcActionSet containsObject:checkID]) {
-        NSLog(@"UIControl 需要跟踪");
-    }else{
-        NSLog(@"UIControl -- 不需要跟踪");
+    if (self.trackID) {
+        PoporTrack * track = [PoporTrack share];
+        if ([track.eventVcTargetActionSet containsObject:self.trackID]) {
+            NSLog(@"UIControl 需要跟踪");
+        }else{
+            NSLog(@"UIControl -- 不需要跟踪");
+        }
     }
-    
 }
 
 // MARK: set get

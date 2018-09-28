@@ -21,18 +21,14 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (nonatomic, strong) NSMutableDictionary * eventDic;
 @property (nonatomic, strong) NSMutableDictionary * routerDic;
 
-// 下面针对的是UIControl,只需要采集VC和Action即可.
-@property (nonatomic, strong) NSMutableSet * controlVcActionSet; // 完整的eventID;
-//@property (nonatomic, strong) NSMutableSet * eventVcSet; // eventClass 集合
-
 /*
- 下面针对UIGestureRecognizer,需要采集VC,Target,Action. 因为系统会生成大量的GR事件,hook的时候会和用户事件产生bug.
+ 下面针对UIGestureRecognizer,UIBarButtonItem,UIControl,需要采集VC,Target,Action. 因为系统会生成大量的GR事件,hook的时候会和用户事件产生bug.
  vc:监测的页面
  target:gr初始target
  action:gr初始action
  */
-@property (nonatomic, strong) NSMutableSet * grEventVcTargetActionSet;
-@property (nonatomic, strong) NSMutableSet * grEventTargetSet;
+@property (nonatomic, strong) NSMutableSet * eventVcTargetActionSet;
+@property (nonatomic, strong) NSMutableSet * eventTargetSet;
 
 - (void)sort;
 

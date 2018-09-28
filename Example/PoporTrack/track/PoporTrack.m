@@ -14,21 +14,19 @@
     static PoporTrack * instance;
     dispatch_once(&once, ^{
         instance = [self new];
-        instance.controlVcActionSet         = [NSMutableSet new];
-        //instance.eventVcSet               = [NSMutableSet new];
         
-        instance.grEventVcTargetActionSet = [NSMutableSet new];
-        instance.grEventTargetSet         = [NSMutableSet new];
+        instance.eventVcTargetActionSet = [NSMutableSet new];
+        instance.eventTargetSet         = [NSMutableSet new];
         
     });
     return instance;
 }
 
 - (void)sort {
-    for (NSString * grEventVcTargetAction in self.grEventVcTargetActionSet) {
+    for (NSString * grEventVcTargetAction in self.eventVcTargetActionSet) {
         NSArray * array = [grEventVcTargetAction componentsSeparatedByString:@"_"];
         if (array.count == 3) {
-            [self.grEventTargetSet addObject:array[1]];
+            [self.eventTargetSet addObject:array[1]];
         }
     }
 }
