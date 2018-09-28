@@ -51,7 +51,7 @@
     
     NSLog(@"checkID:%@", checkID);
     PoporTrack * track = [PoporTrack share];
-    if ([track.eventSet containsObject:checkID]) {
+    if ([track.btVcActionSet containsObject:checkID]) {
         NSLog(@"需要跟踪");
     }else{
         NSLog(@"-- 不需要跟踪");

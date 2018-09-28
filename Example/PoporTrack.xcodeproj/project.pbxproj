@@ -205,8 +205,6 @@
 				189112CA215B2EF000277685 /* PoporTrack.m */,
 				189112D1215B2F4C00277685 /* UIView+track.h */,
 				189112D2215B2F4C00277685 /* UIView+track.m */,
-				189112CC215B2EF100277685 /* UIButton+track.h */,
-				189112CB215B2EF000277685 /* UIButton+track.m */,
 				189112C8215B2EEF00277685 /* UIViewController+track.h */,
 				189112C9215B2EEF00277685 /* UIViewController+track.m */,
 			);
@@ -216,6 +214,8 @@
 		189112D7215B6F0900277685 /* wkqtrack */ = {
 			isa = PBXGroup;
 			children = (
+				189112CC215B2EF100277685 /* UIButton+track.h */,
+				189112CB215B2EF000277685 /* UIButton+track.m */,
 				189112D8215B702B00277685 /* UIBarButtonItem+track.h */,
 				189112D9215B702B00277685 /* UIBarButtonItem+track.m */,
 				1885E6C1215DCB8B00D6F30D /* UIGestureRecognizer+track.h */,

@@ -22,14 +22,19 @@
     }
 #endif
     PoporTrack * track = [PoporTrack share];
-    track.eventSet = [[NSMutableSet alloc] initWithArray:@[@"RootVC1_Touch"]];
+    track.btVcActionSet = [[NSMutableSet alloc] initWithArray:@[@"RootVC1_Touch"]];
     track.vcSet    = [NSMutableSet new];
     // wkq
-    [track.eventSet addObjectsFromArray:@[@"VCWkq1_VCWkq2", @"VCWkq1_VCWkq3", @"RootVC2_CellBT", @"RootVC2_tapGRAction"]];
+    [track.btVcActionSet addObjectsFromArray:@[@"VCWkq1_VCWkq2", @"VCWkq1_VCWkq3", @"RootVC2_CellBT"]];
     [track.vcSet addObjectsFromArray:@[@"VCWkq1", @"VCWkq2", @"VCWkq3"]];
     
     // ahy
     //[track.eventSet addObjectsFromArray:@[]];
+    
+    
+    [track.grEventVcTargetActionSet addObjectsFromArray:@[@"RootVC2_RootVC2Cell_tapGRAction"]];
+    
+    [track sort];
     
     return YES;
 }

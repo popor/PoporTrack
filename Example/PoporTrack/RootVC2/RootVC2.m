@@ -76,7 +76,7 @@
     if (!cell) {
         cell = [[RootVC2Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.l.userInteractionEnabled = NO;
+        //cell.l.userInteractionEnabled = NO;
     }
     
     cell.l.text = [NSString stringWithFormat:@"%li", indexPath.row];

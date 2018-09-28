@@ -81,7 +81,7 @@
 - (void)trackEvent:(UIBarButtonItem *)item {
     if (item.trackAction) {
         PoporTrack * track = [PoporTrack share];
-        if ([track.eventSet containsObject:item.trackID]) {
+        if ([track.btVcActionSet containsObject:item.trackID]) {
             NSLog(@"跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
         }
         SuppressPerformSelectorLeakWarning([self performSelector:item.trackAction];);

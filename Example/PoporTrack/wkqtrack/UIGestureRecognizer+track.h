@@ -12,9 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIGestureRecognizer (track)
 
+@property (nonatomic, strong) NSString * trackID;
 @property (nullable, nonatomic,weak) id  trackTarget;
 @property (nullable, nonatomic)      SEL trackAction;
-@property (nonatomic, strong) NSString * trackVcClass;
+//@property (nonatomic, strong) NSString * trackVcClass;
 
 @end
 
