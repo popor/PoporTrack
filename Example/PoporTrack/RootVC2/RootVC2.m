@@ -55,7 +55,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,9 +76,9 @@
     if (!cell) {
         cell = [[RootVC2Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellID];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.l.userInteractionEnabled = NO;
     }
     
-    //cell.textLabel.text = [NSString stringWithFormat:@"%li", indexPath.row];
     cell.l.text = [NSString stringWithFormat:@"%li", indexPath.row];
     
     return cell;

@@ -9,6 +9,7 @@
 
 #import <PoporFoundation/NSObject+Swizzling.h>
 #import "PoporTrack.h"
+#import "UIView+track.h"
 
 @implementation UIButton (track)
 
@@ -31,27 +32,7 @@
 - (void)trackExtension {
     //NSLog(@"追踪BT: %@ %s", NSStringFromClass([self class]), __func__);
     if (!self.trackID) {
-        NSString * vcClass;
-        UIView * superview = self.superview;
-        UIView * subview   = self;
-        NSString * tempClass;
-        while (!vcClass) {
-            tempClass = NSStringFromClass([superview class]);
-            if ([tempClass isEqualToString:@"UIViewControllerWrapperView"]) {
-                vcClass = subview.trackVcClass;
-                break;
-            }
-            if (!self.superview) {
-                return;
-            }
-            if (!superview) {
-                return;
-            }
-            //NSLog(@"superview:%@, vcClass:%@", vcClass, tempClass);
-            subview = superview;
-            superview = superview.superview;
-        }
-        //NSLog(@"-- superview:%@, vcClass:%@", NSStringFromClass([superview class]), vcClass);
+        NSString * vcClass = self.vcClassName;
         if (vcClass) {
             self.trackID = vcClass;
         }

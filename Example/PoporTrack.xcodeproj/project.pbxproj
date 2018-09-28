@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1885E6BB215DC02C00D6F30D /* RootVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1885E6BA215DC02C00D6F30D /* RootVC2.m */; };
 		1885E6BF215DC66300D6F30D /* RootVC2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1885E6BE215DC66300D6F30D /* RootVC2Cell.m */; };
+		1885E6C3215DCB8B00D6F30D /* UIGestureRecognizer+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 1885E6C2215DCB8B00D6F30D /* UIGestureRecognizer+track.m */; };
 		188C64FE215C826200A49E82 /* VCWkq1.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C64FD215C826200A49E82 /* VCWkq1.m */; };
 		188C6501215C827D00A49E82 /* VCWkq2.m in Sources */ = {isa = PBXBuildFile; fileRef = 188C6500215C827D00A49E82 /* VCWkq2.m */; };
 		189112CE215B2EF200277685 /* UIViewController+track.m in Sources */ = {isa = PBXBuildFile; fileRef = 189112C9215B2EEF00277685 /* UIViewController+track.m */; };
@@ -53,6 +54,8 @@
 		1885E6BA215DC02C00D6F30D /* RootVC2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootVC2.m; sourceTree = "<group>"; };
 		1885E6BD215DC66300D6F30D /* RootVC2Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootVC2Cell.h; sourceTree = "<group>"; };
 		1885E6BE215DC66300D6F30D /* RootVC2Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootVC2Cell.m; sourceTree = "<group>"; };
+		1885E6C1215DCB8B00D6F30D /* UIGestureRecognizer+track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+track.h"; sourceTree = "<group>"; };
+		1885E6C2215DCB8B00D6F30D /* UIGestureRecognizer+track.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+track.m"; sourceTree = "<group>"; };
 		188C64FC215C826200A49E82 /* VCWkq1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCWkq1.h; sourceTree = "<group>"; };
 		188C64FD215C826200A49E82 /* VCWkq1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCWkq1.m; sourceTree = "<group>"; };
 		188C64FF215C827D00A49E82 /* VCWkq2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCWkq2.h; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 			children = (
 				189112D8215B702B00277685 /* UIBarButtonItem+track.h */,
 				189112D9215B702B00277685 /* UIBarButtonItem+track.m */,
+				1885E6C1215DCB8B00D6F30D /* UIGestureRecognizer+track.h */,
+				1885E6C2215DCB8B00D6F30D /* UIGestureRecognizer+track.m */,
 			);
 			path = wkqtrack;
 			sourceTree = "<group>";
@@ -372,6 +377,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = popor;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 6SK6RQ8S8Q;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -484,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				188C6501215C827D00A49E82 /* VCWkq2.m in Sources */,
+				1885E6C3215DCB8B00D6F30D /* UIGestureRecognizer+track.m in Sources */,
 				6003F59E195388D20070C39A /* TrackIosAppDelegate.m in Sources */,
 				189112DA215B702B00277685 /* UIBarButtonItem+track.m in Sources */,
 				189112D0215B2EF200277685 /* UIButton+track.m in Sources */,
@@ -623,11 +632,12 @@
 			baseConfigurationReference = B67D7F3D638D9CD7AFFCAFD0 /* Pods-PoporTrack_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6SK6RQ8S8Q;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PoporTrack/PoporTrack-Prefix.pch";
 				INFOPLIST_FILE = "PoporTrack/PoporTrack-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ifcar99.poporTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -638,11 +648,12 @@
 			baseConfigurationReference = 6D4FA19A117AFAFF5BDC23D1 /* Pods-PoporTrack_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6SK6RQ8S8Q;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PoporTrack/PoporTrack-Prefix.pch";
 				INFOPLIST_FILE = "PoporTrack/PoporTrack-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ifcar99.poporTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -1,8 +1,8 @@
 //
-//  UIView+track.h
+//  UIGestureRecognizer+track.h
 //  PoporTrack_Example
 //
-//  Created by apple on 2018/9/26.
+//  Created by apple on 2018/9/28.
 //  Copyright © 2018年 popor. All rights reserved.
 //
 
@@ -10,13 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (track)
+@interface UIGestureRecognizer (track)
 
-@property (nonatomic, strong) NSString * trackID;
-@property (nonatomic        ) BOOL     trackEnable;
+@property (nullable, nonatomic,weak) id  trackTarget;
+@property (nullable, nonatomic)      SEL trackAction;
 @property (nonatomic, strong) NSString * trackVcClass;
-
-- (NSString *)vcClassName;
 
 @end
 

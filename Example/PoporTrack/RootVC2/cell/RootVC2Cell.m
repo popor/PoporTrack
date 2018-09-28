@@ -80,12 +80,12 @@
 }
 
 - (void)btAction {
-    
+    NSLog(@"%s", __func__);
     
 }
 
 - (void)tapGRAction {
-    
+    NSLog(@"%s", __func__);
     
 }
 
