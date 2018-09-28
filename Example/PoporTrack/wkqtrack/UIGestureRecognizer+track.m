@@ -17,43 +17,31 @@
 @dynamic trackID;
 @dynamic trackTarget;
 @dynamic trackAction;
-//@dynamic trackVcClass;
 
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        
         // 初始化
         [objc_getClass("UIGestureRecognizer") methodSwizzlingWithOriginalSelector:@selector(initWithTarget:action:)  bySwizzledSelector:@selector(trackinitWithTarget:action:)];
-        [objc_getClass("UIGestureRecognizer") methodSwizzlingWithOriginalSelector:@selector(addTarget:action:)  bySwizzledSelector:@selector(trackaddTarget:action:)];
-        [objc_getClass("UIGestureRecognizer") methodSwizzlingWithOriginalSelector:@selector(removeTarget:action:)  bySwizzledSelector:@selector(trackremoveTarget:action:)];
         
     });
 }
 
 - (instancetype)trackinitWithTarget:(nullable id)target action:(nullable SEL)action {
+    UIGestureRecognizer * gr;
     if ([[PoporTrack share].grEventTargetSet containsObject:NSStringFromClass([target class])]) {
-        NSLog(@"self:%@, target: %@, action:%@", NSStringFromClass([self class]), target, NSStringFromSelector(action));
-        NSLog(@"targetClass: %@ - %@", [target class], [target superclass]);
-        
+        //NSLog(@"self:%@, target: %@, action:%@", NSStringFromClass([self class]), target, NSStringFromSelector(action));
+        //NSLog(@"targetClass: %@ - %@", [target class], [target superclass]);
         SEL swizzleSEL = [self swizzlingTarget:target action:action];
-        
-        UIGestureRecognizer * gr = [self trackinitWithTarget:target action:swizzleSEL];
-        gr.trackTarget = target;
-        gr.trackAction = action;
-        
-        return gr;
+        gr = [self trackinitWithTarget:target action:swizzleSEL];
     }else{
-        return [self trackinitWithTarget:target action:action];
+        gr = [self trackinitWithTarget:target action:action];
     }
-}
-
-- (void)trackaddTarget:(id)target action:(SEL)action {
+    // 下面即用于需要监测的,还用于辅助生成trackID.
+    gr.trackTarget = target;
+    gr.trackAction = action;
     
-}
-
-- (void)trackremoveTarget:(nullable id)target action:(nullable SEL)action {
-    
+    return gr;
 }
 
 - (SEL)swizzlingTarget:(id)target action:(SEL)action {

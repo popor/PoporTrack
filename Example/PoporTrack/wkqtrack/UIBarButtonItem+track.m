@@ -32,7 +32,7 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithImage:image style:style target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%li", NSStringFromClass([target class]), image.hash];
+    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
     
     return item;
 }
@@ -41,7 +41,7 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithImage:image landscapeImagePhone:landscapeImagePhone style:style target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%li", NSStringFromClass([target class]), image.hash];
+    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
     
     return item;
 }
@@ -50,7 +50,7 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithTitle:title style:style target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), title];
+    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
     
     return item;
 }
@@ -60,7 +60,7 @@
     
     UIBarButtonItem * item = [self trackinitWithBarButtonSystemItem:systemItem target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%li", NSStringFromClass([target class]), systemItem];
+    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
     
     return item;
 }
@@ -81,8 +81,10 @@
 - (void)trackEvent:(UIBarButtonItem *)item {
     if (item.trackAction) {
         PoporTrack * track = [PoporTrack share];
-        if ([track.btVcActionSet containsObject:item.trackID]) {
-            NSLog(@"跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
+        if ([track.controlVcActionSet containsObject:item.trackID]) {
+            NSLog(@"UIBarButtonItem 需要跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
+        }else{
+            NSLog(@"UIBarButtonItem 不需要跟踪");
         }
         SuppressPerformSelectorLeakWarning([self performSelector:item.trackAction];);
     }

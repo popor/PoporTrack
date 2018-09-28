@@ -21,8 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (nonatomic, strong) NSMutableDictionary * eventDic;
 @property (nonatomic, strong) NSMutableDictionary * routerDic;
 
-// 下面针对的是UIButton,UIBarButtonItem,只需要采集VC和Action即可.
-@property (nonatomic, strong) NSMutableSet * btVcActionSet; // 完整的eventID;
+// 下面针对的是UIControl,只需要采集VC和Action即可.
+@property (nonatomic, strong) NSMutableSet * controlVcActionSet; // 完整的eventID;
 //@property (nonatomic, strong) NSMutableSet * eventVcSet; // eventClass 集合
 
 /*

@@ -14,7 +14,7 @@
     static PoporTrack * instance;
     dispatch_once(&once, ^{
         instance = [self new];
-        instance.btVcActionSet         = [NSMutableSet new];
+        instance.controlVcActionSet         = [NSMutableSet new];
         //instance.eventVcSet               = [NSMutableSet new];
         
         instance.grEventVcTargetActionSet = [NSMutableSet new];

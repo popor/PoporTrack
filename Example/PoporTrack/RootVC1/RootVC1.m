@@ -63,7 +63,7 @@
             
             [self.view addSubview:button];
             
-            [button addTarget:self action:@selector(btAction) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(btAction1) forControlEvents:UIControlEventTouchUpInside];
             
             //button;
         });
@@ -74,6 +74,11 @@
 
 
 - (void)btAction {
+    NSLog(@"%s", __func__);
+    
+}
+
+- (void)btAction1 {
     NSLog(@"%s", __func__);
     
 }

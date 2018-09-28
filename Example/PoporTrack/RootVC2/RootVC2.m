@@ -55,7 +55,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,7 +79,7 @@
         //cell.l.userInteractionEnabled = NO;
     }
     
-    cell.l.text = [NSString stringWithFormat:@"%li", indexPath.row];
+    cell.l.text = [NSString stringWithFormat:@"%li", (long)indexPath.row];
     
     return cell;
 }
