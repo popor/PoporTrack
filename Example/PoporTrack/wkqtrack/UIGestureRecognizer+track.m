@@ -70,7 +70,7 @@
             [PoporTrack trackType:NSStringFromClass([gr class]) key:gr.trackID];
             //NSLog(@"需要跟踪 gr : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(gr.trackAction));
         }
-        SuppressPerformSelectorLeakWarning([gr.trackTarget performSelector:gr.trackAction];);
+        SuppressPerformSelectorLeakWarning([gr.trackTarget performSelector:gr.trackAction withObject:gr];);
     }
 }
 

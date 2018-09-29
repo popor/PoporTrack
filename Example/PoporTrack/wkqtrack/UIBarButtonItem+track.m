@@ -87,7 +87,7 @@
         }else{
             //NSLog(@"UIBarButtonItem 不需要跟踪");
         }
-        SuppressPerformSelectorLeakWarning([self performSelector:item.trackAction];);
+        SuppressPerformSelectorLeakWarning([self performSelector:item.trackAction withObject:item];);
     }
 }
 
