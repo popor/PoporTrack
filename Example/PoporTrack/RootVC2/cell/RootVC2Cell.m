@@ -58,7 +58,9 @@
     });
     
     self.l.userInteractionEnabled = YES;
-    self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGRAction)];
+    //self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGRAction)];
+    self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGRActionP:)];
+    
     [self.l addGestureRecognizer:self.tapGR];
     
     [self.bt mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -87,6 +89,49 @@
 - (void)tapGRAction {
     NSLog(@"%s", __func__);
     
+    //NSLog(@"%@", gr.view);
+}
+
+- (void)tapGRActionP:(UITapGestureRecognizer *)gr {
+    NSLog(@"%s", __func__);
+    
+    //NSLog(@"%@", gr.view);
+    //[gr locationInView:(nullable UIView *)]
+    UIWindow * w = [[UIApplication sharedApplication] keyWindow];
+    if ([w.rootViewController isKindOfClass:[UITabBarController class]]) {
+        UITabBarController * tc = (UITabBarController *)w.rootViewController;
+        if([tc.selectedViewController isKindOfClass:[UINavigationController class]]){
+            UINavigationController * nc = (UINavigationController *)tc.selectedViewController;
+            for (UIView * v in nc.topViewController.view.subviews) {
+                
+                NSLog(@"tc_nc__v: class:%@,frame:%@", NSStringFromClass([v class]), NSStringFromCGRect(v.frame));
+            }
+            UIViewController * vc = (UIViewController *)nc.topViewController;
+            for (UIView * v in vc.view.subviews) {
+                
+                NSLog(@"tc_nc_vc_v: class:%@,frame:%@", NSStringFromClass([v class]), NSStringFromCGRect(v.frame));
+            }
+        }else if([tc.selectedViewController isKindOfClass:[UIViewController class]]){
+            UIViewController * vc = (UIViewController *)tc.selectedViewController;
+            for (UIView * v in vc.view.subviews) {
+                
+                NSLog(@"tc_vc_v: class:%@,frame:%@", NSStringFromClass([v class]), NSStringFromCGRect(v.frame));
+            }
+        }
+    }else if([w.rootViewController isKindOfClass:[UINavigationController class]]){
+        UINavigationController * nc = (UINavigationController *)w.rootViewController;
+        for (UIView * v in nc.topViewController.view.subviews) {
+            
+            NSLog(@"nc_vc_v: class:%@,frame:%@", NSStringFromClass([v class]), NSStringFromCGRect(v.frame));
+        }
+    }else if([w.rootViewController isKindOfClass:[UIViewController class]]){
+        UIViewController * vc = (UIViewController *)w.rootViewController;
+        for (UIView * v in vc.view.subviews) {
+            
+            NSLog(@"vc_v: class:%@,frame:%@", NSStringFromClass([v class]), NSStringFromCGRect(v.frame));
+        }
+    }
+    //[]
 }
 
 @end

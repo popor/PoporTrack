@@ -34,6 +34,10 @@ typedef void(^PoporTrackBlock) (NSString * type, NSString * key);
 
 @property (nonatomic, copy  ) PoporTrackBlock trackBlock;
 
+@property (nonatomic        ) CGFloat   activeAlpha;
+@property (nonatomic        ) CGFloat   normalAlpha;
+@property (nonatomic        ) NSInteger recordMaxNum;
+
 - (void)sort;
 
 + (void)trackType:(NSString *)type key:(NSString *)key;
