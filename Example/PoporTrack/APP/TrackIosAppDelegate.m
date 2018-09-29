@@ -32,7 +32,7 @@
                                                         @"RootVC1_RootVC1_btAction",
                                                         @"VCWkq1_VCWkq1_VCWkq2Action",
                                                         @"VCWkq1_VCWkq1_VCWkq3Action",
-                                                        @"RootVC2_VCWkq1_btAction",
+                                                        @"RootVC2_RootVC2Cell_btAction",
                                                         @"RootVC2_RootVC2Cell_tapGRAction"]];
     
     [track sort];

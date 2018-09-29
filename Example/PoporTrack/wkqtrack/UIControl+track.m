@@ -48,9 +48,10 @@
     if (self.trackID) {
         PoporTrack * track = [PoporTrack share];
         if ([track.eventVcTargetActionSet containsObject:self.trackID]) {
-            NSLog(@"UIControl 需要跟踪");
+            [PoporTrack trackType:NSStringFromClass([self class]) key:self.trackID];
+            //NSLog(@"UIControl 需要跟踪");
         }else{
-            NSLog(@"UIControl -- 不需要跟踪");
+            //NSLog(@"UIControl -- 不需要跟踪");
         }
     }
 }

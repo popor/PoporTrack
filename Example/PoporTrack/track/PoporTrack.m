@@ -31,4 +31,12 @@
     }
 }
 
++ (void)trackType:(NSString *)type key:(NSString *)key {
+    NSLog(@"发现跟踪type: %@, key:%@", type, key);
+    PoporTrack * track = [PoporTrack share];
+    if (track.trackBlock) {
+        track.trackBlock(type, key);
+    }
+}
+
 @end

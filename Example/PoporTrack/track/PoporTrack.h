@@ -13,6 +13,8 @@
  */
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^PoporTrackBlock) (NSString * type, NSString * key);
+
 @interface PoporTrack : NSObject
 
 + (instancetype)share;
@@ -30,7 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableSet * eventVcTargetActionSet;
 @property (nonatomic, strong) NSMutableSet * eventTargetSet;
 
+@property (nonatomic, copy  ) PoporTrackBlock trackBlock;
+
 - (void)sort;
+
++ (void)trackType:(NSString *)type key:(NSString *)key;
 
 @end
 

@@ -82,9 +82,10 @@
     if (item.trackAction) {
         PoporTrack * track = [PoporTrack share];
         if ([track.eventVcTargetActionSet containsObject:item.trackID]) {
-            NSLog(@"UIBarButtonItem 需要跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
+            //NSLog(@"UIBarButtonItem 需要跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
+            [PoporTrack trackType:NSStringFromClass([self class]) key:item.trackID];
         }else{
-            NSLog(@"UIBarButtonItem 不需要跟踪");
+            //NSLog(@"UIBarButtonItem 不需要跟踪");
         }
         SuppressPerformSelectorLeakWarning([self performSelector:item.trackAction];);
     }

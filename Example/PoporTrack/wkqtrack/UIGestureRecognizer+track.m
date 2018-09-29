@@ -67,7 +67,8 @@
         PoporTrack * track = [PoporTrack share];
         
         if ([track.eventVcTargetActionSet containsObject:gr.trackID]) {
-            NSLog(@"需要跟踪 gr : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(gr.trackAction));
+            [PoporTrack trackType:NSStringFromClass([gr class]) key:gr.trackID];
+            //NSLog(@"需要跟踪 gr : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(gr.trackAction));
         }
         SuppressPerformSelectorLeakWarning([gr.trackTarget performSelector:gr.trackAction];);
     }
