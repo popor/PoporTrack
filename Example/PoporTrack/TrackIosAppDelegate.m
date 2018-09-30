@@ -24,6 +24,12 @@
     PoporTrack * track = [PoporTrack share];
     track.eventSet = [[NSMutableSet alloc] initWithArray:@[@"TrackIosVC_Touch"]];
     
+    // wkq
+    [track.eventSet addObjectsFromArray:@[@"VCWkq1_VCWkq2Action"]];
+    
+    // ahy
+    //[track.eventSet addObjectsFromArray:@[]];
+    
     return YES;
 }
 

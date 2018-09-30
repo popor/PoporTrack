@@ -23,7 +23,7 @@
 - (void)trackViewDidLoad {
     [self trackViewDidLoad];
     
-    NSLog(@"追踪VC: %@ %s", NSStringFromClass([self class]), __func__);
+    //NSLog(@"追踪VC: %@ %s", NSStringFromClass([self class]), __func__);
     self.view.trackVcClass = NSStringFromClass([self class]);
 }
 
