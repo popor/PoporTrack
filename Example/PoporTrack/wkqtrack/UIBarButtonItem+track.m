@@ -8,6 +8,7 @@
 
 #import "UIBarButtonItem+track.h"
 #import <PoporFoundation/NSObject+Swizzling.h>
+#import <PoporFoundation/NSObject+performSelector.h>
 #import "UIView+track.h"
 #import "PoporTrack.h"
 
@@ -31,7 +32,7 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithImage:image style:style target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
+    item.trackID = [NSString stringWithFormat:@"%@_%@_%@", NSStringFromClass([target class]), NSStringFromClass([target class]), NSStringFromSelector(action)];
     
     return item;
 }
@@ -40,7 +41,7 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithImage:image landscapeImagePhone:landscapeImagePhone style:style target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
+    item.trackID = [NSString stringWithFormat:@"%@_%@_%@", NSStringFromClass([target class]), NSStringFromClass([target class]), NSStringFromSelector(action)];
     
     return item;
 }
@@ -49,21 +50,25 @@
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
     UIBarButtonItem * item = [self trackinitWithTitle:title style:style target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
+    item.trackID = [NSString stringWithFormat:@"%@_%@_%@", NSStringFromClass([target class]), NSStringFromClass([target class]), NSStringFromSelector(action)];
     
     return item;
 }
 
 - (instancetype)trackinitWithBarButtonSystemItem:(UIBarButtonSystemItem)systemItem target:(nullable id)target action:(nullable SEL)action {
     SEL swizzleSEL = [self swizzlingTarget:target action:action];
+    
     UIBarButtonItem * item = [self trackinitWithBarButtonSystemItem:systemItem target:target action:swizzleSEL];
     item.trackAction = action;
-    item.trackID = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([target class]), NSStringFromSelector(action)];
+    item.trackID = [NSString stringWithFormat:@"%@_%@_%@", NSStringFromClass([target class]), NSStringFromClass([target class]), NSStringFromSelector(action)];
     
     return item;
 }
 
 - (SEL)swizzlingTarget:(id)target action:(SEL)action {
+    if (!target || !action) {
+        return nil;
+    }
     SEL swizzleSEL = @selector(trackEvent:);
     // 新增函数
     class_addMethod([target class], swizzleSEL, class_getMethodImplementation([self class], swizzleSEL), "v@:@");
@@ -74,14 +79,16 @@
 }
 
 - (void)trackEvent:(UIBarButtonItem *)item {
-    PoporTrack * track = [PoporTrack share];
-    if ([track.eventSet containsObject:item.trackID]) {
-        NSLog(@"跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
+    if (item.trackAction) {
+        PoporTrack * track = [PoporTrack share];
+        if ([track.eventVcTargetActionSet containsObject:item.trackID]) {
+            //NSLog(@"UIBarButtonItem 需要跟踪 ncbar : %@, %@", NSStringFromClass([self class]), NSStringFromSelector(item.trackAction));
+            [PoporTrack trackType:NSStringFromClass([self class]) key:item.trackID];
+        }else{
+            //NSLog(@"UIBarButtonItem 不需要跟踪");
+        }
+        SuppressPerformSelectorLeakWarning([self performSelector:item.trackAction withObject:item];);
     }
-    
-    //NS_ASSUME_NONNULL_BEGIN
-    [self performSelector:item.trackAction];
-    //NS_ASSUME_NONNULL_END
 }
 
 // MARK: set get

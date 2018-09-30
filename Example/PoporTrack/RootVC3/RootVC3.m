@@ -1,26 +1,25 @@
 //
-//  TrackIosViewController.m
-//  PoporTrack
+//  RootVC3.m
+//  PoporTrack_Example
 //
-//  Created by popor on 09/21/2018.
-//  Copyright (c) 2018 popor. All rights reserved.
+//  Created by apple on 2018/9/29.
+//  Copyright © 2018 popor. All rights reserved.
 //
 
-#import "TrackIosVC.h"
-
+#import "RootVC3.h"
 #import "VCWkq1.h"
-#import "UIButton+track.h"
 
-@interface TrackIosVC ()
+@interface RootVC3 ()
 
 @end
 
-@implementation TrackIosVC
+@implementation RootVC3
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Track";
-
+   
+    self.title = @"采集事件key";
+    
     [self addViews];
 }
 
@@ -62,23 +61,12 @@
             
             [self.view addSubview:button];
             
-            [button addTarget:self action:@selector(btAction) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(btAction1) forControlEvents:UIControlEventTouchUpInside];
             
             //button;
         });
         
     }
-    
-    {
-//        UIView *subView = [UIView new];
-        
-        NSString *str = [[UIDevice currentDevice] name];
-        NSLog(@"str = %@", str);
-        
-    }
-    
-    
-    
     
 }
 
@@ -88,9 +76,16 @@
     
 }
 
+- (void)btAction1 {
+    NSLog(@"%s", __func__);
+    
+}
+
 - (void)ncRItemAction {
     //NSLog(@"%s", __func__);
     [self.navigationController pushViewController:[VCWkq1 new] animated:YES];
 }
+
+
 
 @end

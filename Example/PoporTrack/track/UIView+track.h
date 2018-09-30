@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic        ) BOOL     trackEnable;
 @property (nonatomic, strong) NSString * trackVcClass;
 
+- (NSString *)vcClassName;
+
 @end
 
 NS_ASSUME_NONNULL_END

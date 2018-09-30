@@ -2,7 +2,8 @@ use_frameworks!
 
 target 'PoporTrack_Example' do
   pod 'PoporTrack', :path => '../'
-
+  pod 'Masonry'
+  
   target 'PoporTrack_Tests' do
     inherit! :search_paths
 

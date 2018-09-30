@@ -14,6 +14,29 @@
 @dynamic trackEnable;
 @dynamic trackVcClass;
 
+- (NSString *)vcClassName {
+    NSString * vcClass;
+    UIView * superview = self.superview;
+    UIView * subview   = self;
+    NSString * tempClass;
+    while (!vcClass) {
+        tempClass = NSStringFromClass([superview class]);
+        if ([tempClass isEqualToString:@"UIViewControllerWrapperView"]) {
+            vcClass = subview.trackVcClass;
+            break;
+        }
+        if (!superview) {
+            return nil;
+        }
+        //NSLog(@"superview:%@, vcClass:%@", vcClass, tempClass);
+        subview = superview;
+        superview = superview.superview;
+    }
+    //NSLog(@"-- superview:%@, vcClass:%@", NSStringFromClass([superview class]), vcClass);
+    return vcClass;
+}
+
+// MARK: set get
 - (void)setTrackID:(NSString *)trackID {
     objc_setAssociatedObject(self, @"trackID", trackID, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -31,12 +54,12 @@
     return n.boolValue;
 }
 
-- (void)setTrackVcClass:(NSString *)trackClass {
-    objc_setAssociatedObject(self, @"trackClass", trackClass, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setTrackVcClass:(NSString *)trackVcClass {
+    objc_setAssociatedObject(self, @"trackVcClass", trackVcClass, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSString *)trackVcClass {
-    return objc_getAssociatedObject(self, @"trackClass");
+    return objc_getAssociatedObject(self, @"trackVcClass");
 }
 
 @end
